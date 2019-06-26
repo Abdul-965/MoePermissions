@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+android:id="@+id/relativeLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img_user" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="81dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="Name"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="291dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="100dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="Name"
+        android:textColor="@color/colorPrimary" />
+
+
+</RelativeLayout>

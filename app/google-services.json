@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "852452159310",
+    "firebase_url": "https://moepermissions.firebaseio.com",
+    "project_id": "moepermissions",
+    "storage_bucket": "moepermissions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852452159310:android:ccadafed421c4949",
+        "android_client_info": {
+          "package_name": "applications.moe.moepermissions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852452159310-kvlt68hei5ncqdpuriibo9fq1b5k8kja.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "applications.moe.moepermissions",
+            "certificate_hash": "91bddde3ab7d0a1865801b6f8567428d379673f0"
+          }
+        },
+        {
+          "client_id": "852452159310-rnr1en2ijt3ojp5521n2tuiarisihcg8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4SuSeya1WhBdtGKBOszd2I3BvZmr99WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852452159310-rnr1en2ijt3ojp5521n2tuiarisihcg8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
