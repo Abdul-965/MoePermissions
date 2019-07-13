@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
         appContext = getApplicationContext();
         // set firebase Auth and Database
         firebaseAuth = FirebaseAuth.getInstance();
@@ -180,13 +181,14 @@ public class LoginActivity extends AppCompatActivity {
                                             String role = moeUser.get_role() == 1 ? "Manager" : "Employee";
                                             Toast.makeText(appContext, "Welcome " + moeUser.get_name() + ", " + role, Toast.LENGTH_LONG).show();
                                             Boolean _isManager = moeUser.get_role() == 1;
-//                                            if(_isManager) {
-//                                                Intent myIntent = new Intent(LoginActivity.this, ManagerActivity.class);
-//                                                startActivity(myIntent);
-//                                            }
-//                                            else {
-//
-//                                            }
+                                            if(_isManager) { //open manager activity
+                                                Intent myIntent = new Intent(LoginActivity.this, ManagerActivity.class);
+                                                startActivity(myIntent);
+                                            }
+                                            else { // open employee activity
+                                                Intent myIntent = new Intent(LoginActivity.this, RequestActivity.class);
+                                                startActivity(myIntent);
+                                            }
                                         } else {
                                             Toast.makeText(appContext, "Invalid login", Toast.LENGTH_LONG).show();
                                             focusView = mEmailView;

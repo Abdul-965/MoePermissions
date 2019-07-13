@@ -1,0 +1,3 @@
+fatima.hamed@moe.com 123456 manager 
+abdul.muteri@moe.com 123456 employee 
+moha.mansour@moe.com 123456 employee
