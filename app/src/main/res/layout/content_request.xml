@@ -72,16 +72,61 @@
                     android:padding="5dp"
                     android:textSize="15sp" />
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="57dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Hour"
+                        android:textSize="15dp" />
+
+                    <Spinner
+                        android:id="@+id/hour"
+                        android:layout_width="66dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="69dp"
+                        android:entries="@array/req_hours"
+                        android:padding="5dp"
+                        android:textSize="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="87dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Minute"
+                        android:textSize="15dp" />
+
+                    <Spinner
+                        android:id="@+id/minute"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="15dp"
+                        android:entries="@array/req_miniutes"
+                        android:padding="5dp"
+                        android:textSize="10dp" />
+
+                </RelativeLayout>
+
                 <EditText
                     android:id="@+id/reason"
                     android:layout_width="match_parent"
-                    android:layout_height="99dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="5dp"
                     android:background="@color/editTextBG"
                     android:hint="Reason"
+                    android:inputType="textMultiLine"
                     android:maxLines="50"
                     android:padding="5dp"
-                    android:inputType="textMultiLine"
                     android:textSize="15sp" />
                 <RelativeLayout
                     android:id="@+id/relativeLayout4"
@@ -97,11 +142,10 @@
                         android:layout_marginTop="10dp"
                         android:fontFamily="sans-serif-medium"
                         android:text="End of Day"
-                        android:textColor="@color/colorPrimary"
                         android:textSize="15dp" />
 
                     <Switch
-                        android:id="@+id/simpleSwitch1"
+                        android:id="@+id/endOfDaySwitch"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -112,18 +156,60 @@
                         android:textOff="Off"
                         android:textOn="On" />
                 </RelativeLayout>
-                <EditText
-                    android:id="@+id/rDate"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@color/editTextBG"
-                    android:baselineAligned="false"
-                    android:hint="Time return"
-                    android:padding="5dp"
-                    android:textSize="15sp" />
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Return Time"
+                    android:textSize="15dp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="57dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Hour"
+                        android:textSize="15dp" />
+
+                    <Spinner
+                        android:id="@+id/hourReturn"
+                        android:layout_width="66dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="69dp"
+                        android:entries="@array/req_hours_end"
+                        android:padding="5dp"
+                        android:textSize="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="87dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Minute"
+                        android:textSize="15dp" />
+
+                    <Spinner
+                        android:id="@+id/minuteReturn"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="15dp"
+                        android:entries="@array/req_miniutes"
+                        android:padding="5dp"
+                        android:textSize="10dp" />
+
+                </RelativeLayout>
                 <Button
-                    android:id="@+id/btn_signIn"
+                    android:id="@+id/btn_add_request"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"

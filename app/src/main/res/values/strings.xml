@@ -21,4 +21,33 @@
     <string name="title_activity_request">RequestActivity</string>
     <string name="title_activity_manager">Manager</string>
     <string name="title_activity_listview">activity_listview</string>
+
+    <string-array name="req_hours">
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+    </string-array>
+
+    <string-array name="req_hours_end">
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+    </string-array>
+
+    <string-array name="req_miniutes">
+        <item>00</item>
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+    </string-array>
+
 </resources>
