@@ -127,6 +127,7 @@
                     android:inputType="textMultiLine"
                     android:maxLines="50"
                     android:padding="5dp"
+                    android:text="My Reason"
                     android:textSize="15sp" />
                 <RelativeLayout
                     android:id="@+id/relativeLayout4"

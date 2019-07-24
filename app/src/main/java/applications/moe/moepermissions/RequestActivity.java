@@ -18,16 +18,27 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RequestActivity extends AppCompatActivity implements View.OnClickListener{
 
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore firestore;
     private Spinner hourSpinner, miniuteSpinner, returnHourSpinner, returnMinuteSpinner; // define spinner
     private int startHour = 7, startMiniute = 0, returnHour = 7, returnMinute = 0; // define time values
     private Button btn_add_request;
-    private EditText cDate;
+    private EditText cDate, reasonText;
     private Switch endOfDaySwitch;
     private Context context; // store app context
     private int mYear, mMonth, mDay;
@@ -37,6 +48,9 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_request);
         getSupportActionBar().hide();
         context = getApplicationContext();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
+
         hourSpinner = (Spinner) findViewById(R.id.hour);
         hourSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -127,7 +141,35 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
                 Toast.makeText(getApplicationContext(), "Maximum permission time is three hours", Toast.LENGTH_LONG).show();
             }
             else {
-                Toast.makeText(getApplicationContext(), "Request sent for approval", Toast.LENGTH_LONG).show();
+                String _date = cDate.getText().toString();
+                String _hour = hourSpinner.getSelectedItem().toString();
+                String _minute = miniuteSpinner.getSelectedItem().toString();;
+                reasonText = (EditText) findViewById(R.id.reason);
+                String _reason = reasonText.getText().toString();
+                int _restOfDay =  endOfDaySwitch.isActivated() == true ? 1 : 0;
+                String _return_h = returnHourSpinner.getSelectedItem().toString();;
+                String _return_m = returnMinuteSpinner.getSelectedItem().toString();;
+                int _status = 0;
+                String _uid = firebaseAuth.getCurrentUser().getUid();
+
+                Map<String, String> permissionMap = new HashMap<>();
+                permissionMap.put("_date", _date);
+                permissionMap.put("_hour", _hour);
+                permissionMap.put("_minute", _minute);
+                permissionMap.put("_reason", _reason);
+                permissionMap.put("_restOfDay", String.valueOf(_restOfDay));
+                permissionMap.put("_return_h",_return_h);
+                permissionMap.put("_return_m",_return_m);
+                permissionMap.put("_status", String.valueOf(_status));
+                permissionMap.put("_uid", _uid);
+
+                Task<DocumentReference> Addpermission = firestore.collection("permissions").add(permissionMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                    @Override
+                    public void onComplete(Task<DocumentReference> task) {
+                        Toast.makeText(getApplicationContext(), "Request sent for approval", Toast.LENGTH_LONG).show();
+                    }
+                });
+
             }
         }
         if (view == cDate) {
