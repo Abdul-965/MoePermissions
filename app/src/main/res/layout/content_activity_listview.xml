@@ -6,31 +6,21 @@ android:id="@+id/relativeLayout4"
     android:layout_height="wrap_content"
     android:layout_marginTop="15dp">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/img_user" />
-
     <TextView
-        android:id="@+id/name"
-        android:layout_width="81dp"
+        android:id="@+id/dList"
+        android:layout_width="317dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="10dp"
         android:padding="@dimen/activity_horizontal_margin"
-        android:text="Name"
         android:textColor="@color/colorPrimary" />
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="291dp"
+    <CheckBox
+        android:id="@+id/approveCheck"
+        android:layout_width="43dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="100dp"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:text="Name"
-        android:textColor="@color/colorPrimary" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
 
 
 </RelativeLayout>

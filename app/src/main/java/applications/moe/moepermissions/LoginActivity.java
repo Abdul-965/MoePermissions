@@ -53,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
     FirebaseUser user;
     MoeUser moeUser;
-
     View focusView;
     Context appContext;
 
